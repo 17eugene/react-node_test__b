@@ -9,8 +9,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.listen(PORT, console.log(`Server run on port ${PORT}`));
-
 app.use("/api", hotdogsRoutes);
 
 app.use((req, res) => {
@@ -22,3 +20,5 @@ app.use((err, req, res, next) => {
   const message = err.message || "Server error";
   res.status(status).json({ message });
 });
+
+app.listen(PORT, console.log(`Server run on port ${PORT}`));
