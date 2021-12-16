@@ -4,7 +4,8 @@ const getAllCtrl = async (req, res, next) => {
   try {
     const allHotdogs = await db.query(`SELECT * FROM hotdogs`);
 
-    res.status(200).json(allHotdogs.rows);
+    res.end("Hello");
+    // res.status(200).json(allHotdogs.rows);
   } catch (error) {
     next(error);
   }
